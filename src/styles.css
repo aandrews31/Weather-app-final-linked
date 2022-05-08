@@ -1,0 +1,98 @@
+button {
+  border: 2px solid;
+  color: black;
+  background: rgb(255, 255, 255);
+  border-radius: 0px 7px 7px 0px;
+}
+button:hover {
+  background: rgb(211, 211, 211);
+  transition: 150ms ease-in-out;
+}
+form {
+  text-align: center;
+}
+ul {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0px;
+  margin: 0 auto;
+  list-style: none;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 500;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+#time {
+  font-size: 30px;
+}
+.cityBox {
+  text-align: center;
+  border: 2px solid;
+  margin: 20px 250px 20px 250px;
+}
+.day-1 {
+  border: 2px solid;
+  margin: -2px -2px 0px 0px;
+  text-align: center;
+  font-size: 30px;
+}
+.day-2 {
+  border: 2px solid;
+  margin: -2px -2px 0px 0px;
+  text-align: center;
+  font-size: 30px;
+}
+.day-3 {
+  border: 2px solid;
+  margin: -2px -2px 0px 0px;
+  text-align: center;
+  font-size: 30px;
+}
+.day-4 {
+  border: 2px solid;
+  margin: -2px -2px 0px 0px;
+  text-align: center;
+  font-size: 30px;
+}
+.day-5 {
+  border: 2px solid;
+  margin: -2px -2px 0px 0px;
+  text-align: center;
+  font-size: 30px;
+}
+.daily {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.mycontainer {
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid;
+  margin: 50px;
+  padding: 50px 50px 50px 50px;
+}
+.forecast {
+  border: 2px solid;
+  text-align: center;
+  padding: 9px 0px 9px 0px;
+  margin-bottom: 0px;
+}
+.searchbar {
+  border-radius: 7px 0px 0px 7px;
+  width: 550px;
+}
+.part-sun {
+  color: rgb(219, 179, 0);
+  font-size: 30px;
+}
+.cloud {
+  color: rgb(124, 163, 175);
+  font-size: 30px;
+}
+.rain {
+  color: rgb(0, 96, 126);
+  font-size: 30px;
+}
