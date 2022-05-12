@@ -64,3 +64,4 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("New York");
+//to-do before submitting- unit conversion C and F, icon changes for wether type (cloudy, sunny, etc)
