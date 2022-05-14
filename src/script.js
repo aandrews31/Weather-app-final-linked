@@ -21,10 +21,9 @@ let currentDay = formattedDays[currentTime.getDay()];
 clock.innerHTML = `${currentDay} ${hours}:${minutes}`;
 
 function displayWeather(response) {
+  celsiusTemp = response.data.main.temp;
   document.querySelector("#city-name").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#temp").innerHTML = Math.round(celsiusTemp);
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
   );
@@ -65,3 +64,25 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("New York");
 //to-do before submitting- unit conversion C and F, icon changes for wether type (cloudy, sunny, etc)
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+let fahrenheitLink = document.querySelector("#fahrenheit");
+let celsiusLink = document.querySelector("#celsius");
+
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+searchCity("New York");
