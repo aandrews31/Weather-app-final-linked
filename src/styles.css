@@ -26,6 +26,10 @@ h2 {
   font-size: 30px;
   font-weight: 500;
 }
+#current-location-button.btn {
+  display: block;
+  margin: 0 auto;
+}
 #time {
   font-size: 30px;
 }
