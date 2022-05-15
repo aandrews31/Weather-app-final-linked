@@ -68,6 +68,8 @@ searchCity("New York");
 function showFahrenheitTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(fahrenheitTemp);
 }
@@ -75,6 +77,8 @@ function showFahrenheitTemp(event) {
 function showCelsiusTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
