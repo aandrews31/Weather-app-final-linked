@@ -32,6 +32,11 @@ function displayWeather(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function searchCity(city) {
   let apiKey = "9e55ce91de1e84df9f3dbe33f9c2133a";
@@ -63,7 +68,7 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("New York");
-//to-do before submitting- unit conversion C and F, icon changes for wether type (cloudy, sunny, etc)
+//to-do before submitting- unit conversion C and F, icon changes for weather type (cloudy, sunny, etc)
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
