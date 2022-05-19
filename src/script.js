@@ -74,6 +74,7 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerhtml = "Forecast";
 }
+displayForecast();
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
@@ -92,8 +93,8 @@ function showCelsiusTemp(event) {
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
-displayForecast();
 let celsiusTemp = null;
+
 let fahrenheitLink = document.querySelector("#fahrenheit");
 let celsiusLink = document.querySelector("#celsius");
 
