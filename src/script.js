@@ -69,7 +69,11 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("New York");
-//to-do before submitting- unit conversion C and F, icon changes for weather type (cloudy, sunny, etc)
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerhtml = "Forecast";
+}
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
@@ -88,6 +92,7 @@ function showCelsiusTemp(event) {
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
+displayForecast();
 let celsiusTemp = null;
 let fahrenheitLink = document.querySelector("#fahrenheit");
 let celsiusLink = document.querySelector("#celsius");
