@@ -26,6 +26,12 @@ h2 {
   font-size: 30px;
   font-weight: 500;
 }
+#celsius {
+  font-size: 30px;
+}
+#temp {
+  font-size: 30px;
+}
 #time {
   font-size: 30px;
 }
@@ -105,6 +111,7 @@ h2 {
   color: rgb(0, 96, 126);
   font-size: 30px;
 }
+
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
