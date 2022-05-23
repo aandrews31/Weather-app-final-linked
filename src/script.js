@@ -134,4 +134,3 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("New York");
-displayForecast();
