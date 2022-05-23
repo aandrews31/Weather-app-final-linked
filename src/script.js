@@ -20,6 +20,14 @@ let formattedDays = [
 let currentDay = formattedDays[currentTime.getDay()];
 clock.innerHTML = `${currentDay} ${hours}:${minutes}`;
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "9e55ce91de1e84df9f3dbe33f9c2133a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  response.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   celsiusTemp = response.data.main.temp;
   document.querySelector("#city-name").innerHTML = response.data.name;
@@ -38,7 +46,9 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
+
 function searchCity(city) {
   let apiKey = "9e55ce91de1e84df9f3dbe33f9c2133a";
   let units = "metric";
@@ -70,11 +80,34 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("New York");
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerhtml = "Forecast";
+function displayForecast(response) {
+  console.log(response.data.daily);
+  forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thurs", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `     
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img 
+          src="http://openweathermap.org/img/wn/10d@2x.png" 
+          alt="" 
+          width="42" 
+          />
+          <div class="weather-forecast-temp">
+            <span class="weather-forecast-temp-max">18°</
+            span>
+            <span class="weather-forecast-temp-min">12°</
+            span>
+          </div>
+        </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
@@ -94,7 +127,7 @@ function showCelsiusTemp(event) {
 }
 
 let celsiusTemp = null;
-
+displayForecast();
 let fahrenheitLink = document.querySelector("#fahrenheit");
 let celsiusLink = document.querySelector("#celsius");
 
